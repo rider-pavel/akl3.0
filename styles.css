@@ -1,0 +1,1318 @@
+/* Сброс и базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #180f3f;
+    --secondary-color: #070253;
+    --text-color: #333;
+    --white: #ffffff;
+    --black: #000000;
+    --gradient: linear-gradient(to right, var(--black), var(--secondary-color));
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-color);
+    background-color: var(--white);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Стили для выдвигающегося меню */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(24, 15, 63, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: all 0.4s ease;
+    padding: 15px 0;
+}
+
+.navbar.scrolled {
+    padding: 10px 0;
+    background-color: rgba(24, 15, 63, 0.98);
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Логотип */
+.nav-logo {
+    display: flex;
+    flex-direction: column;
+    color: var(--white);
+}
+
+.logo-text {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.logo-subtext {
+    font-size: 0.8rem;
+    opacity: 0.9;
+}
+
+/* Меню */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--white);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 80%;
+}
+
+/* Кнопка звонка */
+.cta-button {
+    background-color: #4CAF50;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+}
+
+.cta-button:hover {
+    background-color: #3d8b40;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+}
+
+/* Кнопка мобильного меню */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* Адаптивность меню */
+@media (max-width: 992px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: 300px;
+        height: calc(100vh - 70px);
+        background-color: var(--primary-color);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 40px 30px;
+        transition: right 0.5s ease;
+        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.2);
+        overflow-y: auto;
+    }
+    
+    .nav-menu.active {
+        right: 0;
+    }
+    
+    .nav-item {
+        width: 100%;
+    }
+    
+    .nav-link {
+        padding: 15px 0;
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav-link::after {
+        display: none;
+    }
+    
+    .cta-button {
+        margin-top: 20px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-menu {
+        width: 100%;
+    }
+    
+    .nav-logo .logo-text {
+        font-size: 1.5rem;
+    }
+    
+    .logo-subtext {
+        font-size: 0.7rem;
+    }
+}
+
+.container {
+    padding-top: 100px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding-top: 90px;
+    }
+}
+
+/* Шапка */
+.header {
+    margin-top: 60px;
+}
+
+.main-title {
+    color: var(--primary-color);
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 30px;
+}
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.tel, .geo {
+    color: var(--secondary-color);
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+/* Главный баннер */
+.hero {
+    margin: 80px 0;
+}
+
+.hero-title {
+    color: var(--primary-color);
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    margin-bottom: 40px;
+}
+
+.hero-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.hero-subtitle {
+    color: var(--primary-color);
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    flex: 1;
+}
+
+/* Преимущества */
+.advantages {
+    margin: 80px 0;
+}
+
+.advantage-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.advantage-card {
+    flex: 1;
+    min-width: 300px;
+    padding: 25px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.advantage-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.advantage-card p {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* Галерея */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 80px 0;
+}
+
+.gallery-image {
+    flex: 1;
+    min-width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.gallery-image:hover {
+    transform: scale(1.02);
+}
+
+/* Образование */
+.education {
+    margin: 80px 0;
+}
+
+.section-title {
+    color: var(--primary-color);
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.education-card {
+    padding: 30px;
+    background: var(--gradient);
+    border-radius: 20px;
+    color: var(--white);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.education-card:hover {
+    transform: translateY(-10px);
+}
+
+.education-card p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* Мероприятия */
+.events {
+    margin: 80px 0;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.event-card {
+    padding: 30px;
+    border: 2px solid var(--primary-color);
+    border-radius: 20px;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.event-card:hover {
+    box-shadow: 0 10px 30px rgba(24, 15, 63, 0.2);
+    transform: translateY(-5px);
+}
+
+.event-card p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* Карта */
+.location {
+    margin: 80px 0 120px;
+}
+
+.map-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* Соотношение 16:9 */
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+#postupaushim_header {
+    margin-top: 100px;
+    margin-left: 50px;
+    font-size: 70px;
+}
+
+#responsible, #postupaushim_header, #inquiries_by_phone {
+    margin-left: 50px;
+}
+
+.postupaushim {
+    border: #180f3f solid 2px;
+    border-radius: 30px;
+    padding: 20px;
+    font-size: 25px;
+    width: 1100px;
+    margin-left: 50px;
+    margin-top: 70px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+h1.ped_sostav {
+    font-size: 70px;
+    margin-top: 100px;
+    margin-left: 50px;
+}
+
+h2.ped_sostav {
+    font-size: 30px;
+    margin-left: 50px;
+}
+
+#about {
+    width: 800px;
+    height: 50px;
+    background-color: #a9b3ff;
+    border-radius: 10px;
+    margin-left: 50px;
+    padding: 10px;
+}
+
+#list_of_teachers {
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+h1.achievement {
+    font-size: 70px;
+    margin-top: 100px;
+    margin-left: 50px;    
+}
+
+div.achievement {
+    border: 2px solid black;
+    padding: 20px;
+    width: 600px;
+    border-radius: 20px;
+    margin-left: 50px;
+}
+
+div.contacts {
+    width: 1300px;
+    padding: 20px;
+    margin-top: 100px;
+    margin-left: 50px;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+h1.contacts {
+    margin-left: 50px;
+}
+
+p.personal_reception_info {
+    font-size: 23px;
+}
+
+div.all_ab_teacher {
+    width: 900px;
+    border: #000000 2px solid;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img.photo {
+    height: 300px;
+    border: 1px black solid;
+    border-radius: 20px;
+}
+
+#name {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: #6eadff;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+}
+
+.all_ab_teacher {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.all_ab_teacher.show {
+    display: block;
+} 
+
+/* Сброс и базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #180f3f;
+    --secondary-color: #070253;
+    --text-color: #333;
+    --white: #ffffff;
+    --black: #000000;
+    --gradient: linear-gradient(to right, var(--black), var(--secondary-color));
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-color);
+    background-color: var(--white);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Стили для выдвигающегося меню */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(24, 15, 63, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: all 0.4s ease;
+    padding: 15px 0;
+}
+
+.navbar.scrolled {
+    padding: 10px 0;
+    background-color: rgba(24, 15, 63, 0.98);
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Логотип */
+.nav-logo {
+    display: flex;
+    flex-direction: column;
+    color: var(--white);
+}
+
+.logo-text {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.logo-subtext {
+    font-size: 0.8rem;
+    opacity: 0.9;
+}
+
+/* Меню */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--white);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 80%;
+}
+
+/* Кнопка звонка */
+.cta-button {
+    background-color: #4CAF50;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+}
+
+.cta-button:hover {
+    background-color: #3d8b40;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+}
+
+/* Кнопка мобильного меню */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* Адаптивность меню */
+@media (max-width: 992px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: 300px;
+        height: calc(100vh - 70px);
+        background-color: var(--primary-color);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 40px 30px;
+        transition: right 0.5s ease;
+        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.2);
+        overflow-y: auto;
+    }
+    
+    .nav-menu.active {
+        right: 0;
+    }
+    
+    .nav-item {
+        width: 100%;
+    }
+    
+    .nav-link {
+        padding: 15px 0;
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav-link::after {
+        display: none;
+    }
+    
+    .cta-button {
+        margin-top: 20px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-menu {
+        width: 100%;
+    }
+    
+    .nav-logo .logo-text {
+        font-size: 1.5rem;
+    }
+    
+    .logo-subtext {
+        font-size: 0.7rem;
+    }
+}
+
+.container {
+    padding-top: 100px;
+}
+
+/* ========== МОБИЛЬНАЯ АДАПТАЦИЯ ========== */
+
+/* Общие мобильные стили */
+@media (max-width: 768px) {
+    .container {
+        padding-top: 80px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    h1 {
+        font-size: 2rem !important;
+        margin-left: 15px !important;
+        margin-right: 15px !important;
+        word-wrap: break-word;
+    }
+
+    h2 {
+        font-size: 1.5rem !important;
+        margin-left: 15px !important;
+        margin-right: 15px !important;
+    }
+
+    p, li, a {
+        font-size: 1rem !important;
+    }
+}
+
+/* Главная страница */
+@media (max-width: 768px) {
+    .header {
+        margin-top: 30px;
+    }
+
+    .main-title {
+        font-size: 2rem !important;
+        text-align: center;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .tel, .geo {
+        font-size: 1.1rem !important;
+    }
+
+    .hero {
+        margin: 40px 0;
+    }
+
+    .hero-title {
+        font-size: 2rem !important;
+        text-align: center;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-image {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem !important;
+    }
+
+    .advantage-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .advantage-card {
+        min-width: 100%;
+        padding: 20px;
+    }
+
+    .gallery {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .gallery-image {
+        min-width: 100%;
+        height: 250px;
+    }
+
+    .section-title {
+        font-size: 2rem !important;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .education-grid, .events-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .education-card, .event-card {
+        padding: 20px;
+    }
+
+    .vk {
+        display: block;
+        text-align: center;
+        margin: 20px auto;
+        font-size: 1.2rem;
+    }
+}
+
+/* Страница "Поступающим" */
+@media (max-width: 768px) {
+    #postupaushim_header {
+        font-size: 2.5rem !important;
+        margin: 80px 15px 20px !important;
+        text-align: center;
+    }
+
+    #responsible, #inquiries_by_phone {
+        margin-left: 15px !important;
+        margin-right: 15px !important;
+        text-align: center;
+        font-size: 1.2rem !important;
+    }
+
+    .postupaushim {
+        width: calc(100% - 30px) !important;
+        margin-left: 15px !important;
+        margin-right: 15px !important;
+        padding: 15px !important;
+        font-size: 1rem !important;
+        border-radius: 15px;
+    }
+
+    #tasks {
+        padding-left: 15px !important;
+    }
+
+    #tasks li {
+        margin-bottom: 10px;
+    }
+
+    #tasks a {
+        font-size: 0.95rem !important;
+        word-break: break-word;
+    }
+}
+
+/* Страница "Педагоги" */
+@media (max-width: 768px) {
+    h1.ped_sostav {
+        font-size: 2.5rem !important;
+        margin: 80px 15px 20px !important;
+        text-align: center;
+    }
+
+    h2.ped_sostav {
+        font-size: 1.5rem !important;
+        margin-left: 15px !important;
+        margin-right: 15px !important;
+        text-align: center;
+    }
+
+    #about {
+        width: calc(100% - 30px) !important;
+        margin-left: 15px !important;
+        margin-right: 15px !important;
+        height: auto !important;
+        min-height: 50px;
+        font-size: 1rem !important;
+    }
+
+    #list_of_teachers {
+        margin-left: 15px !important;
+        margin-right: 15px !important;
+    }
+
+    .teacher-item {
+        width: 100%;
+    }
+
+    .dropbtn {
+        padding: 12px !important;
+        font-size: 0.95rem !important;
+        white-space: normal;
+        word-wrap: break-word;
+        text-align: left;
+    }
+
+    .all_ab_teacher {
+        width: 100% !important;
+        padding: 15px !important;
+    }
+
+    .teacher_name {
+        font-size: 1.3rem !important;
+        text-align: center;
+    }
+
+    .main_ab_teacher {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .photo {
+        width: 150px !important;
+        height: 150px !important;
+        margin: 0 auto;
+    }
+
+    .teacher-info {
+        text-align: left;
+        font-size: 0.95rem !important;
+    }
+
+    .teacher-info p {
+        margin-bottom: 8px;
+    }
+}
+
+/* Страница "Достижения" */
+@media (max-width: 768px) {
+    h1.achievement {
+        font-size: 2.5rem !important;
+        margin: 80px 15px 20px !important;
+        text-align: center;
+    }
+
+    div.achievement {
+        width: calc(100% - 30px) !important;
+        margin-left: 15px !important;
+        margin-right: 15px !important;
+        padding: 15px !important;
+    }
+
+    div.achievement h2 {
+        font-size: 1.5rem !important;
+        margin: 15px 0 10px !important;
+    }
+
+    div.achievement a {
+        display: block;
+        word-break: break-word;
+        font-size: 0.95rem !important;
+        margin-bottom: 15px;
+        padding: 10px;
+        background-color: #f5f5f5;
+        border-radius: 8px;
+    }
+}
+
+/* Страница "Контакты" */
+@media (max-width: 768px) {
+    #head_contacts {
+        font-size: 2.5rem !important;
+        margin: 80px 15px 20px !important;
+        text-align: center;
+    }
+
+    div.contacts {
+        width: calc(100% - 30px) !important;
+        margin-left: 15px !important;
+        margin-right: 15px !important;
+        padding: 15px !important;
+    }
+
+    #personal_reception h1 {
+        font-size: 1.3rem !important;
+        margin: 0 0 15px !important;
+    }
+
+    p.personal_reception_info {
+        font-size: 1rem !important;
+    }
+
+    h1.contacts {
+        font-size: 1.2rem !important;
+        margin-left: 15px !important;
+        margin-right: 15px !important;
+        text-align: center;
+        word-wrap: break-word;
+    }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 480px) {
+    .container {
+        padding-top: 70px;
+    }
+
+    h1 {
+        font-size: 1.8rem !important;
+    }
+
+    h2 {
+        font-size: 1.3rem !important;
+    }
+
+    .logo-text {
+        font-size: 1.3rem !important;
+    }
+
+    .logo-subtext {
+        font-size: 0.6rem !important;
+    }
+
+    .hero-title {
+        font-size: 1.8rem !important;
+    }
+
+    .hero-subtitle {
+        font-size: 1.3rem !important;
+    }
+
+    .advantage-card p {
+        font-size: 0.95rem !important;
+    }
+
+    .gallery-image {
+        height: 200px;
+    }
+
+    .education-card p, .event-card p {
+        font-size: 0.95rem !important;
+    }
+
+    .dropbtn {
+        font-size: 0.9rem !important;
+        padding: 10px !important;
+    }
+
+    .photo {
+        width: 120px !important;
+        height: 120px !important;
+    }
+
+    .teacher-info {
+        font-size: 0.9rem !important;
+    }
+
+    .postupaushim a {
+        word-break: break-all;
+    }
+}
+
+/* Исправление для карты */
+@media (max-width: 768px) {
+    .map-container {
+        margin: 0 15px;
+        width: calc(100% - 30px);
+    }
+}
+
+/* Улучшение читаемости ссылок */
+@media (max-width: 768px) {
+    a {
+        word-wrap: break-word;
+    }
+    
+    .nav-link {
+        word-wrap: normal;
+    }
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero, .advantages, .gallery, .education, .events, .location {
+    animation: fadeIn 1s ease-out;
+}
+
+/* ========== ИСПРАВЛЕНИЕ РАЗМЕРОВ ИЗОБРАЖЕНИЙ ========== */
+
+/* Общие правила для всех изображений */
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Главная страница */
+.hero-image {
+    max-width: 100%;
+    width: auto;
+    max-height: 400px; /* Ограничиваем высоту */
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.gallery-image {
+    width: 100%;
+    max-width: 500px; /* Ограничиваем максимальную ширину */
+    height: 250px; /* Фиксированная высота */
+    object-fit: cover; /* Обрезаем изображение, чтобы вписать в размер */
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+/* Страница педагогов */
+.photo {
+    width: 200px;
+    height: 200px;
+    border: 2px solid var(--primary-color);
+    border-radius: 20px;
+    object-fit: cover; /* Важно! Обрезает фото по размеру */
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+    /* Главная страница */
+    .hero-image {
+        max-height: 300px;
+        width: 100%;
+        object-fit: contain; /* Показывает всё изображение без обрезки */
+    }
+    
+    .gallery-image {
+        max-width: 100%;
+        height: 200px;
+    }
+    
+    /* Страница педагогов */
+    .photo {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-image {
+        max-height: 250px;
+    }
+    
+    .gallery-image {
+        height: 180px;
+    }
+    
+    .photo {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+/* Улучшенные стили для мобильного меню */
+@media (max-width: 992px) {
+    .navbar {
+        padding: 10px 0;
+    }
+    
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.8rem;
+        cursor: pointer;
+        padding: 10px 15px;
+        z-index: 1001;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 350px;
+        height: 100vh;
+        background-color: var(--primary-color);
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 80px 30px 30px;
+        transition: right 0.4s ease;
+        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.3);
+        overflow-y: auto;
+        z-index: 1000;
+    }
+    
+    .nav-menu.active {
+        right: 0;
+    }
+    
+    .nav-item {
+        width: 100%;
+        margin: 5px 0;
+    }
+    
+    .nav-link {
+        padding: 15px 20px;
+        font-size: 1.2rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .nav-link i {
+        width: 25px;
+        text-align: center;
+    }
+    
+    .cta-button {
+        margin-top: 20px;
+        justify-content: center;
+        background-color: #4CAF50;
+        border-radius: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-menu {
+        width: 100%;
+        max-width: none;
+    }
+    
+    .menu-toggle {
+        font-size: 1.5rem;
+    }
+}

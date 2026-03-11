@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+    <div class="nav-container">
+        <!-- Логотип -->
+        <div class="nav-logo">
+            <span class="logo-text">АКЛ</span>
+            <span class="logo-subtext">им. Ю.В. Кондратюка</span>
+        </div>
+        
+        <!-- Кнопка меню для мобильных -->
+        <button class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>  <!-- Иконка должна быть здесь -->
+        </button>
+        
+        <!-- Основное меню -->
+        <ul class="nav-menu" id="navMenu">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link">Главная</a>
+            </li>
+            <li class="nav-item">
+                <a href="postupaushim.html" class="nav-link">Поступающим</a>
+            </li>
+            <li class="nav-item">
+                <a href="ped_sostav.html" class="nav-link">Педагоги</a>
+            </li>
+            <li class="nav-item">
+                <a href="achievement.html" class="nav-link">Достижения</a>
+            </li>
+            <li class="nav-item">
+                <a href="contacts.html" class="nav-link">Контакты</a>
+            </li>
+            <li class="nav-item">
+                <a href="tel:+73832792123" class="nav-link cta-button">
+                    <i class="fas fa-phone"></i> Позвонить
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+    <h1 id="postupaushim_header">Поступающим</h1>
+    <h2 id="responsible"> Ответственные: Загайнова Анастасия Николаевна, Сергеева Надежда Юрьевна</h2>
+    <h2 id="inquiries_by_phone">Справки по телефону: (383) 279-21-23</h2>
+
+    <p class="postupaushim" id="main_info_postupaushim">С 05.10.2025 г. по 28.04.2026 г. по воскресеньям на базе Аэрокосмического лицея имени Ю.В. Кондратюка будут открыты платные образовательные услуги (ПО) для учащихся 6-х классов по предметам математика (олимпиадная математика), русский язык, информатика.</p>
+
+    <p class="postupaushim" id="statement">Желающие заниматься в группах ПО, необходимо заполнить <a href="https://akl.edusite.ru/sveden/files/49728ecb5d20ab00edbdce97ddf39c23.pdf" target="_blank">Заявление</a> (форма прилагается) и отправить на почту  <a href="https://e.mail.ru/compose/" target="_blank">zayavka@kondratuka.ru</a></p>
+
+    <ul class="postupaushim" id="more_info_postupaushim">
+        <li>Стоимость 1 380 рублей в месяц (12 часов).</li>
+        <li>Родительское собрание по подготовительному отделению состоится 01.10.2025 г. в 18:00</li>
+        <li>Занятия ПО начнутся с 05.10.2025 г.</li>
+        <li>Справки по телефон: +7 279-21-23 Загайнова Анастасия Николаевна, Сергеева Надежда Юрьевна.</li>
+    </ul>
+
+     <ul class="postupaushim" id="tasks">
+        <li><a href="https://akl.edusite.ru/sveden/files/721397f37bced7b150e60c9e562293a4.pdf" target="_blank">Задания по математике прошлых лет</a></li>
+        <li><a href="https://akl.edusite.ru/sveden/files/9e345bd6f14f1be454d03a86f2f096b7.pdf" target="_blank">Примеры вступительной олимпиадной математики </a></li>
+        <li><a href="https://akl.edusite.ru/sveden/files/5b644e237286ba1c2e2a10ab34b38c0a.pdf" target="_blank">Критерии по оцениванию вступительного экзамена по русскому языку</a></li>
+        <li><a href="https://akl.edusite.ru/sveden/files/f76f3cf9796856c52ff4842c38f3b5d5.pdf" target="_blank">Список литературы на лето 7 класс</a></li>
+     </ul>
+
+     <script>
+    // Функционал выдвигающегося меню
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        const navbar = document.querySelector('.navbar');
+        
+        // Проверяем, что элементы существуют
+        if (!menuToggle || !navMenu) return;
+        
+        // Переключение меню
+        menuToggle.addEventListener('click', function(event) {
+            event.stopPropagation(); // Предотвращаем всплытие события
+            navMenu.classList.toggle('active');
+            
+            // Меняем иконку
+            const icon = menuToggle.querySelector('i');
+            if (icon) {
+                if (navMenu.classList.contains('active')) {
+                    icon.className = 'fas fa-times';
+                } else {
+                    icon.className = 'fas fa-bars';
+                }
+            }
+        });
+        
+        // Закрытие меню при клике на ссылку
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+                const icon = menuToggle.querySelector('i');
+                if (icon) {
+                    icon.className = 'fas fa-bars';
+                }
+            });
+        });
+        
+        // Закрытие меню при клике вне области
+        document.addEventListener('click', function(event) {
+            if (!navMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+                navMenu.classList.remove('active');
+                const icon = menuToggle.querySelector('i');
+                if (icon) {
+                    icon.className = 'fas fa-bars';
+                }
+            }
+        });
+        
+        // Изменение меню при скролле
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    });
+</script>
+ </body>

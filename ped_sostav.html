@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аэрокосмический лицей им. Ю.В. Кондратюка</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+    <div class="nav-container">
+        <!-- Логотип -->
+        <div class="nav-logo">
+            <span class="logo-text">АКЛ</span>
+            <span class="logo-subtext">им. Ю.В. Кондратюка</span>
+        </div>
+        
+        <!-- Кнопка меню для мобильных -->
+        <button class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>  <!-- Иконка должна быть здесь -->
+        </button>
+        
+        <!-- Основное меню -->
+        <ul class="nav-menu" id="navMenu">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link">Главная</a>
+            </li>
+            <li class="nav-item">
+                <a href="postupaushim.html" class="nav-link">Поступающим</a>
+            </li>
+            <li class="nav-item">
+                <a href="ped_sostav.html" class="nav-link">Педагоги</a>
+            </li>
+            <li class="nav-item">
+                <a href="achievement.html" class="nav-link">Достижения</a>
+            </li>
+            <li class="nav-item">
+                <a href="contacts.html" class="nav-link">Контакты</a>
+            </li>
+            <li class="nav-item">
+                <a href="tel:+73832792123" class="nav-link cta-button">
+                    <i class="fas fa-phone"></i> Позвонить
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+    <h1 class="ped_sostav" id="head_ped_sostav">Педагогический состав</h1>
+    <h2 class="ped_sostav">Персональный состав педагогических работников по уровням образования</h2>
+
+    <div class="ped_sostav" id="about">
+        <p>Основное и/или среднее общее образование</p>
+    </div>
+
+    <div class="ped_sostav" id="list_of_teachers">
+        <!-- Головачева Анастасия Викторовна -->
+        <div class="teacher-item">
+            <button class="dropbtn" onclick="toggleTeacher('teacher1')">Головачева Анастасия Викторовна (История и обществознание)</button>
+            <div class="all_ab_teacher" id="teacher1">
+                <div class="teacher_name">Головачева Анастасия Викторовна</div>
+                <div class="main_ab_teacher">
+                    <img src="avatar.png" class="photo" alt="Фото учителя">
+                    <div class="teacher-info">
+                        <p><strong>Предмет:</strong> История и обществознание</p>
+                        <p><strong>Ученая степень:</strong>Не указано</p>
+                        <p><strong>Ученое звание:</strong>Не указано</p>
+                        <p><strong>Общий стаж работы:</strong>4 года</p>
+                        <p><strong>Педагогический стаж:</strong>4 года</p>
+                        <p><strong>Стаж работы по специальности</strong>4 года</p>
+                        <p><strong>Стаж работы в данной ОО:</strong>4 года</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Астахова Альбина Андреевна -->
+        <div class="teacher-item">
+            <button class="dropbtn" onclick="toggleTeacher('teacher2')">Астахова Альбина Андреевна (Математика)</button>
+            <div class="all_ab_teacher" id="teacher2">
+                <div class="teacher_name">Астахова Альбина Андреевна</div>
+                <div class="main_ab_teacher">
+                    <img src="avatar.png" class="photo" alt="Фото учителя">
+                    <div class="teacher-info">
+                        <p><strong>Предмет:</strong> Математика</p>
+                        <p><strong>Ученая степень:</strong>Не указано</p>
+                        <p><strong>Ученое звание:</strong>Не указано</p>
+                        <p><strong>Общий стаж работы:</strong>4 года</p>
+                        <p><strong>Педагогический стаж:</strong>4 года</p>
+                        <p><strong>Стаж работы по специальности</strong>4 года</p>
+                        <p><strong>Стаж работы в данной ОО:</strong>4 года</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Бахарева Марина Сергеевна -->
+        <div class="teacher-item">
+            <button class="dropbtn" onclick="toggleTeacher('teacher3')">Бахарева Марина Сергеевна (Компьютерная графика и музыка)</button>
+            <div class="all_ab_teacher" id="teacher3">
+                <div class="teacher_name">Бахарева Марина Сергеевна</div>
+                <div class="main_ab_teacher">
+                    <img src="bms.png" class="photo" alt="Фото учителя">
+                    <div class="teacher-info">
+                        <p><strong>Предмет:</strong>Музыка,компьютерная графика</p>
+                        <p><strong>Ученая степень:</strong>Не указано</p>
+                        <p><strong>Ученое звание:</strong>Не указано</p>
+                        <p><strong>Общий стаж работы:</strong>30 года</p>
+                        <p><strong>Педагогический стаж:</strong>28 года</p>
+                        <p><strong>Стаж работы по специальности</strong>28 года</p>
+                        <p><strong>Стаж работы в данной ОО:</strong>23 года</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Болгарова Наталья Николаевна -->
+        <div class="teacher-item">
+            <button class="dropbtn" onclick="toggleTeacher('teacher4')">Болгарова Наталья Николаевна (Русский язык и литература)</button>
+            <div class="all_ab_teacher" id="teacher4">
+                <div class="teacher_name">Болгарова Наталья Николаевна</div>
+                <div class="main_ab_teacher">
+                    <img src="avatar.png" class="photo" alt="Фото учителя">
+                    <div class="teacher-info">
+                        <p><strong>Предмет:</strong> Русский язык и литература</p>
+                        <p><strong>Ученая степень:</strong>Не указано</p>
+                        <p><strong>Ученое звание:</strong>Не указано</p>
+                        <p><strong>Общий стаж работы:</strong>30 года</p>
+                        <p><strong>Педагогический стаж:</strong>28 года</p>
+                        <p><strong>Стаж работы по специальности</strong>28 года</p>
+                        <p><strong>Стаж работы в данной ОО:</strong>23 года</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Бойченко Марина Владимировна -->
+        <div class="teacher-item">
+            <button class="dropbtn" onclick="toggleTeacher('teacher5')">Бойченко Марина Владимировна (Химия и биология)</button>
+            <div class="all_ab_teacher" id="teacher5">
+                <div class="teacher_name">Бойченко Марина Владимировна</div>
+                <div class="main_ab_teacher">
+                    <img src="avatar.png" class="photo" alt="Фото учителя">
+                    <div class="teacher-info">
+                        <p><strong>Предмет:</strong>Химия, биология</p>
+                        <p><strong>Ученая степень:</strong>Не указано</p>
+                        <p><strong>Ученое звание:</strong>Не указано</p>
+                        <p><strong>Общий стаж работы:</strong>21 год</p>
+                        <p><strong>Педагогический стаж:</strong>7 лет</p>
+                        <p><strong>Стаж работы по специальности</strong>7 лет</p>
+                        <p><strong>Стаж работы в данной ОО:</strong>1 год</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Добавьте остальных учителей по аналогии -->
+        <!-- Гаврикова Наталия Валерьевна -->
+        <div class="teacher-item">
+            <button class="dropbtn" onclick="toggleTeacher('teacher6')">Гаврикова Наталия Валерьевна (Русский язык и литература)</button>
+            <div class="all_ab_teacher" id="teacher6">
+                <div class="teacher_name">Гаврикова Наталия Валерьевна</div>
+                <div class="main_ab_teacher">
+                    <img src="gnv.png" class="photo" alt="Фото учителя">
+                    <div class="teacher-info">
+                        <p><strong>Предмет:</strong>Русский язык и литература</p>
+                        <p><strong>Ученая степень:</strong>Не указано</p>
+                        <p><strong>Ученое звание:</strong>"Отличник просвещения"</p>
+                        <p><strong>Общий стаж работы:</strong>32 года</p>
+                        <p><strong>Педагогический стаж:</strong>32 года</p>
+                        <p><strong>Стаж работы по специальности</strong>32 года</p>
+                        <p><strong>Стаж работы в данной ОО:</strong>11 лет</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Гамаюнова Татьяна Владимировна -->
+        <div class="teacher-item">
+            <button class="dropbtn" onclick="toggleTeacher('teacher7')">Гамаюнова Татьяна Владимировна (ИЗО)</button>
+            <div class="all_ab_teacher" id="teacher7">
+                <div class="teacher_name">Гамаюнова Татьяна Владимировна</div>
+                <div class="main_ab_teacher">
+                    <img src="avatar.png" class="photo" alt="Фото учителя">
+                    <div class="teacher-info">
+                        <p><strong>Предмет:</strong>ИЗО</p>
+                        <p><strong>Ученая степень:</strong>Не указано</p>
+                        <p><strong>Ученое звание:</strong>Не указано</p>
+                        <p><strong>Общий стаж работы:</strong>40 лет</p>
+                        <p><strong>Педагогический стаж:</strong>36 лет</p>
+                        <p><strong>Стаж работы по специальности</strong>36 лет</p>
+                        <p><strong>Стаж работы в данной ОО:</strong>18 лет</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="teacher-item">
+            <button class="dropbtn" onclick="toggleTeacher('teacher8')">Гумиров Тимур Фанильевич (История и обществознание)</button>
+            <div class="all_ab_teacher" id="teacher8">
+                <div class="teacher_name">Гумиров Тимур Фанильевич</div>
+                <div class="main_ab_teacher">
+                    <img src="gtf.png" class="photo" alt="Фото учителя">
+                    <div class="teacher-info">
+                        <p><strong>Предмет:</strong>История и обществознание</p>
+                        <p><strong>Ученая степень:</strong>Не указано</p>
+                        <p><strong>Ученое звание:</strong>Не указано</p>
+                        <p><strong>Общий стаж работы:</strong>10 лет</p>
+                        <p><strong>Педагогический стаж:</strong>10 лет</p>
+                        <p><strong>Стаж работы по специальности</strong>10 лет</p>
+                        <p><strong>Стаж работы в данной ОО:</strong>10 лет</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Дунцова Любовь Михайловна -->
+        <div class="teacher-item">
+            <button class="dropbtn" onclick="toggleTeacher('teacher9')">Дунцова Любовь Михайловна (Французский, немецкий)</button>
+            <div class="all_ab_teacher" id="teacher9">
+                <div class="teacher_name">Дунцова Любовь Михайловна</div>
+                <div class="main_ab_teacher">
+                    <img src="dlm.png" class="photo" alt="Фото учителя">
+                    <div class="teacher-info">
+                        <p><strong>Предмет:</strong>Иностранные языки (французский, немецкий)</p>
+                        <p><strong>Ученая степень:</strong>Не указано</p>
+                        <p><strong>Ученое звание:</strong>Не указано</p>
+                        <p><strong>Общий стаж работы:</strong>40 лет</p>
+                        <p><strong>Педагогический стаж:</strong>40 лет</p>
+                        <p><strong>Стаж работы по специальности</strong>40 лет</p>
+                        <p><strong>Стаж работы в данной ОО:</strong>37 лет</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Духно Ирина Сергеевна -->
+        <div class="teacher-item">
+            <button class="dropbtn" onclick="toggleTeacher('teacher10')">Духно Ирина Сергеевна (Физика)</button>
+            <div class="all_ab_teacher" id="teacher10">
+                <div class="teacher_name">Духно Ирина Сергеевна</div>
+                <div class="main_ab_teacher">
+                    <img src="dis.png" class="photo" alt="Фото учителя">
+                    <div class="teacher-info">
+                        <p><strong>Предмет:</strong>Физика</p>
+                        <p><strong>Ученая степень:</strong>Не указано</p>
+                        <p><strong>Ученое звание:</strong>Не указано</p>
+                        <p><strong>Общий стаж работы:</strong>20 лет</p>
+                        <p><strong>Педагогический стаж:</strong>14 лет</p>
+                        <p><strong>Стаж работы по специальности</strong>14 лет</p>
+                        <p><strong>Стаж работы в данной ОО:</strong>8 лет</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="teacher-item">
+            <button class="dropbtn" onclick="toggleTeacher('teacher11')">Ефанова Ольга Валентиновна</button>
+            <div class="all_ab_teacher" id="teacher11">
+                <div class="teacher_name">Ефанова Ольга Валентиновна</div>
+                <div class="main_ab_teacher">
+                    <img src="eov.png" class="photo" alt="Фото учителя">
+                    <div class="teacher-info">
+                        <p><strong>Предмет:</strong>Педагог дополнительного образования</p>
+                        <p><strong>Ученая степень:</strong>Не указано</p>
+                        <p><strong>Ученое звание:</strong>Не указано</p>
+                        <p><strong>Общий стаж работы:</strong>44 года</p>
+                        <p><strong>Педагогический стаж:</strong>36 лет</p>
+                        <p><strong>Стаж работы по специальности</strong>36 лет</p>
+                        <p><strong>Стаж работы в данной ОО:</strong>26 лет</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="teacher-item">
+            <button class="dropbtn" onclick="toggleTeacher('teacher12')">Зеликман Максим Валентинович</button>
+            <div class="all_ab_teacher" id="teacher12">
+                <div class="teacher_name">Зеликман Максим Валентинович</div>
+                <div class="main_ab_teacher">
+                    <img src="avatar.png" class="photo" alt="Фото учителя">
+                    <div class="teacher-info">
+                        <p><strong>Предмет:</strong>Физика</p>
+                        <p><strong>Ученая степень:</strong>Не указано</p>
+                        <p><strong>Ученое звание:</strong>Не указано</p>
+                        <p><strong>Общий стаж работы:</strong>14 лет</p>
+                        <p><strong>Педагогический стаж:</strong>2 года</p>
+                        <p><strong>Стаж работы по специальности</strong>11 лет</p>
+                        <p><strong>Стаж работы в данной ОО:</strong>2 года</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="teacher-item">
+            <button class="dropbtn" onclick="toggleTeacher('teacher13')">Казанцев Сергей Геннадьевич</button>
+            <div class="all_ab_teacher" id="teacher13">
+                <div class="teacher_name">Казанцев Сергей Геннадьевич</div>
+                <div class="main_ab_teacher">
+                    <img src="ksg.png" class="photo" alt="Фото учителя">
+                    <div class="teacher-info">
+                        <p><strong>Предмет:</strong>КЛА, индивидуальный проект, спецкурс</p>
+                        <p><strong>Ученая степень:</strong>Не указано</p>
+                        <p><strong>Ученое звание:</strong>Почётный работник сферы образования Российской Федерации</p>
+                        <p><strong>Общий стаж работы:</strong>38 лет</p>
+                        <p><strong>Педагогический стаж:</strong>37 лет</p>
+                        <p><strong>Стаж работы по специальности</strong>37 лет</p>
+                        <p><strong>Стаж работы в данной ОО:</strong>37 лет</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="teacher-item">
+            <button class="dropbtn" onclick="toggleTeacher('teacher14')">Каретников Михаил Анатольевич</button>
+            <div class="all_ab_teacher" id="teacher14">
+                <div class="teacher_name">Каретников Михаил Анатольевич</div>
+                <div class="main_ab_teacher">
+                    <img src="kma.png" class="photo" alt="Фото учителя">
+                    <div class="teacher-info">
+                        <p><strong>Предмет:</strong>Основы безопасности и защиты Родины</p>
+                        <p><strong>Ученая степень:</strong>Не указано</p>
+                        <p><strong>Ученое звание:</strong>Не указано</p>
+                        <p><strong>Общий стаж работы:</strong>29 лет</p>
+                        <p><strong>Педагогический стаж:</strong>29 лет</p>
+                        <p><strong>Стаж работы по специальности</strong>29 лет</p>
+                        <p><strong>Стаж работы в данной ОО:</strong>7 лет</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="teacher-item">
+            <button class="dropbtn" onclick="toggleTeacher('teacher15')">Клековкина Татьяна Валерьевна</button>
+            <div class="all_ab_teacher" id="teacher15">
+                <div class="teacher_name">Клековкина Татьяна Валерьевна</div>
+                <div class="main_ab_teacher">
+                    <img src="ktv.png" class="photo" alt="Фото учителя">
+                    <div class="teacher-info">
+                        <p><strong>Предмет:</strong>Информатика</p>
+                        <p><strong>Ученая степень:</strong>Не указано</p>
+                        <p><strong>Ученое звание:</strong>Отличник просвещения</p>
+                        <p><strong>Общий стаж работы:</strong>40 лет</p>
+                        <p><strong>Педагогический стаж:</strong>30 лет</p>
+                        <p><strong>Стаж работы по специальности</strong>30 лет</p>
+                        <p><strong>Стаж работы в данной ОО:</strong>19 лет</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="teacher-item">
+            <button class="dropbtn" onclick="toggleTeacher('teacher16')">Корниенко Нина Сергеевна</button>
+            <div class="all_ab_teacher" id="teacher16">
+                <div class="teacher_name">Корниенко Нина Сергеевна</div>
+                <div class="main_ab_teacher">
+                    <img src="avatar.png" class="photo" alt="Фото учителя">
+                    <div class="teacher-info">
+                        <p><strong>Предмет:</strong>Русский язык, литература</p>
+                        <p><strong>Ученая степень:</strong>Не указано</p>
+                        <p><strong>Ученое звание:</strong>Почётный работник общего образования Российской Федерации</p>
+                        <p><strong>Общий стаж работы:</strong>41 год</p>
+                        <p><strong>Педагогический стаж:</strong>36 лет</p>
+                        <p><strong>Стаж работы по специальности</strong>36 лет</p>
+                        <p><strong>Стаж работы в данной ОО:</strong>5 лет</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        /* Дополнительные стили для страницы педсостава */
+        .teacher-item {
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        .dropbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+            transition: background-color 0.3s;
+        }
+
+        .dropbtn:hover {
+            background-color: #3d8b40;
+        }
+
+        .all_ab_teacher {
+            display: none;
+            background-color: #f1f1f1;
+            padding: 20px;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            margin-top: -5px;
+            width: 100%;
+        }
+
+        .all_ab_teacher.show {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .teacher_name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #180f3f;
+        }
+
+        .main_ab_teacher {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+        }
+
+        .photo {
+            height: 200px;
+            width: 200px;
+            border: 2px solid #180f3f;
+            border-radius: 20px;
+            object-fit: cover;
+        }
+
+        .teacher-info {
+            flex: 1;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .teacher-info p {
+            margin-bottom: 10px;
+        }
+
+        .teacher-info strong {
+            color: #180f3f;
+            font-weight: 600;
+        }
+
+        #list_of_teachers {
+            margin-left: 50px;
+            margin-top: 30px;
+            margin-right: 50px;
+            max-width: 1200px;
+        }
+
+        @media (max-width: 768px) {
+            #list_of_teachers {
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+
+            .main_ab_teacher {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .photo {
+                height: 150px;
+                width: 150px;
+            }
+
+            #about {
+                width: 90% !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+        }
+
+        /* Стили для страницы поступающим */
+        #postupaushim_header {
+            margin-top: 100px;
+            margin-left: 50px;
+            font-size: 70px;
+        }
+
+        #responsible, #postupaushim_header, #inquiries_by_phone {
+            margin-left: 50px;
+        }
+
+        .postupaushim {
+            border: #180f3f solid 2px;
+            border-radius: 30px;
+            padding: 20px;
+            font-size: 25px;
+            width: 90%;
+            max-width: 1100px;
+            margin-left: 50px;
+            margin-top: 70px;
+        }
+    </style>
+
+    <script>
+        function toggleTeacher(teacherId) {
+            const teacherInfo = document.getElementById(teacherId);
+            const isShowing = teacherInfo.classList.contains('show');
+            
+            // Закрываем все открытые окна
+            const allTeacherInfos = document.querySelectorAll('.all_ab_teacher');
+            allTeacherInfos.forEach(info => {
+                if (info.id !== teacherId) {
+                    info.classList.remove('show');
+                }
+            });
+            
+            // Переключаем текущее окно
+            if (!isShowing) {
+                teacherInfo.classList.add('show');
+            } else {
+                teacherInfo.classList.remove('show');
+            }
+            
+            // Предотвращаем всплытие события
+            event.stopPropagation();
+        }
+
+        // Закрытие при клике вне области
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropbtn')) {
+                const dropdowns = document.getElementsByClassName("all_ab_teacher");
+                for (let i = 0; i < dropdowns.length; i++) {
+                    const openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+
+        // Мобильное меню
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menuToggle');
+            const navMenu = document.getElementById('navMenu');
+            
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                });
+            }
+            
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('active');
+                });
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menuToggle');
+            const navMenu = document.getElementById('navMenu');
+            const navbar = document.querySelector('.navbar');
+            
+            // Проверяем, что элементы существуют
+            if (!menuToggle || !navMenu) return;
+            
+            // Переключение меню
+            menuToggle.addEventListener('click', function(event) {
+                event.stopPropagation(); // Предотвращаем всплытие события
+                navMenu.classList.toggle('active');
+                
+                // Меняем иконку
+                const icon = menuToggle.querySelector('i');
+                if (icon) {
+                    if (navMenu.classList.contains('active')) {
+                        icon.className = 'fas fa-times';
+                    } else {
+                        icon.className = 'fas fa-bars';
+                    }
+                }
+            });
+            
+            // Закрытие меню при клике на ссылку
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('active');
+                    const icon = menuToggle.querySelector('i');
+                    if (icon) {
+                        icon.className = 'fas fa-bars';
+                    }
+                });
+            });
+            
+            // Закрытие меню при клике вне области
+            document.addEventListener('click', function(event) {
+                if (!navMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+                    navMenu.classList.remove('active');
+                    const icon = menuToggle.querySelector('i');
+                    if (icon) {
+                        icon.className = 'fas fa-bars';
+                    }
+                }
+            });
+            
+            // Изменение меню при скролле
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 100) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>
