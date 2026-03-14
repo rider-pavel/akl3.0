@@ -535,14 +535,6 @@ img.photo {
   display: inline-block;
 }
 
-.dropbtn {
-  background-color: #71afff;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  border-radius: 10px;
-}
 
 .all_ab_teacher {
   display: none;
